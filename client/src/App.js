@@ -1,32 +1,29 @@
-import React from 'react';
-import NavBar from './components/Navbar';
+import React from "react";
+import NavBar from "./components/Navbar";
 import "./App.css";
-import {BrowserRouter, Route} from 'react-router-dom';
-import Home from './components/screens/Home'
-import SignIn from './components/screens/SignIn'
-import Profile from './components/screens/Profile'
-import Signup from './components/screens/Signup'
-
-
+import { BrowserRouter, Route } from "react-router-dom";
+import Home from "./components/screens/Home";
+import SignIn from "./components/screens/SignIn";
+import Profile from "./components/screens/Profile";
+import Signup from "./components/screens/Signup";
 
 function App() {
   return (
     <BrowserRouter>
-      <NavBar/>
+      <NavBar />
       <Route exact path="/">
-        <Home/>
+        <Home />
       </Route>
       <Route path="/signin">
-        <SignIn/>
+        <SignIn />
       </Route>
       <Route path="/signup">
-        <Signup/>
+        <Signup />
       </Route>
       <Route path="/profile">
-        <Profile/>
+        <Profile />
       </Route>
     </BrowserRouter>
-    
   );
 }
 
