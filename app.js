@@ -1,19 +1,11 @@
 const express = require('express')
-
 const app = express()
-
 const mongoose = require('mongoose')
 //3rqTboTFE4zJTvGn
 const PORT = 5000
 const {MONGOURI} =  require('./key')
 
 
-require('./models/user')
-//mongoose.model("User",userSchema)
-
-
-app.use(express.json())
-app.use(require('./routes/auth'))
 
 // to regiester of our routes
 
@@ -31,6 +23,18 @@ mongoose.connection.on('connected', ()=>{
 mongoose.connection.on('error', (err)=>{
     console.log("Connecting",err)
 })
+
+require('./models/user')
+require('./models/post')
+//mongoose.model("User",userSchema)
+
+
+app.use(express.json())
+app.use(require('./routes/auth'))
+app.use(require('./routes/post'))
+
+
+
 
 
 // const customMiddleware = (req , res , next) =>{
