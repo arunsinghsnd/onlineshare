@@ -11,7 +11,10 @@ const {MONGOURI} =  require('./key')
 require('./models/user')
 //mongoose.model("User",userSchema)
 
+
+app.use(express.json())
 app.use(require('./routes/auth'))
+
 // to regiester of our routes
 
 
