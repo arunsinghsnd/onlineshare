@@ -1,18 +1,26 @@
 const mongoose = require('mongoose')
-
+const {ObjectId} = mongoose.Schema.Types
 const userSchema = new mongoose.Schema({
     name:{
         type:String,
-        require:true
+        required:true
     },
     email:{
         type:String,
-        require:true
+        required:true
     },
     password:{
         type:String,
-        require:true
-    }
+        required:true
+    },
+    resetToken:String,
+    expireToken:Date,
+    pic:{
+     type:String,
+     default:"https://res.cloudinary.com/dnng54cpa/image/upload/v1586197723/noimage_d4ipmd.png"
+    },
+    followers:[{type:ObjectId,ref:"User"}],
+    following:[{type:ObjectId,ref:"User"}]
 })
 
 mongoose.model("User",userSchema)
