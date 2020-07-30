@@ -15,9 +15,11 @@ const {SENDGRID_API,EMAIL} = require('../config/keys')
 
 //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
 
+//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
+
 const transporter = nodemailer.createTransport(sendgridTransport({
     auth:{
-        api_key:"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"
+        api_key:SENDGRID_API
         //SENDGRID_API
     }
 }))
